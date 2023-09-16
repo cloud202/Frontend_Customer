@@ -2,29 +2,36 @@ import {  Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeade
 import { CalendarIcon, ExternalLinkIcon, HamburgerIcon, PlusSquareIcon, ViewIcon } from '@chakra-ui/icons'
 import React from 'react'
 import { Link ,useLocation} from 'react-router-dom'
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import ChaletOutlinedIcon from '@mui/icons-material/ChaletOutlined';
+import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import RoofingOutlinedIcon from '@mui/icons-material/RoofingOutlined';
 
 const Sidebar = () => {
     const location = useLocation();
     const { isOpen, onOpen, onClose } = useDisclosure();
 
       const sidebarItems = [
-        { label: "Project", route: "/admin/newproject",icon: PlusSquareIcon },
-        { label: "GenAI Tools", route: "/admin/phase",icon: ViewIcon },
-        { label: "Business Case Solution", route: "/admin/module",icon: ViewIcon },
-        { label: "Carbon Footprint Calculator", route: "/admin/task",icon: ViewIcon },
-        { label: "Architecture Centre", route: "/admin/solution",icon: ExternalLinkIcon },
+        { label: "New Project", route: "/newproject",icon: AddBoxOutlinedIcon },
+        { label: "GenAI Tools", route: "/admin/phase",icon: PsychologyIcon },
+        { label: "Business Case Solution", route: "/admin/module",icon: BusinessCenterOutlinedIcon },
+        { label: "Carbon Footprint Calculator", route: "/admin/task",icon: CalculateOutlinedIcon },
+        { label: "Architecture Centre", route: "/admin/solution",icon: RoofingOutlinedIcon },
         { label: "Solution Library", route: "/admin/customer",icon: CalendarIcon },
-        { label: "Knowledge Base", route: "/admin/customer",icon: CalendarIcon },
+        { label: "Knowledge Base", route: "/admin/customer",icon: MenuBookOutlinedIcon },
       ];
 
       const showSidebar = useBreakpointValue({ base: false, md: false,lg: true });
 
       if (showSidebar) {
         return (
-          <List bg="#546269" position="fixed" minH="100vh" p="20px" alignItems="left" >
+          <List bg="#546269" position="fixed" minH="100vh"  p="12px" pt='20px'>
             {sidebarItems.map((item, index) => (
               <Link to={item.route} key={index}>
-                <ListItem mb="15px" p="5px" color={location.pathname === item.route ? "#ffca39" : "#FFFFFF"} _hover={{borderRadius:'8px', backgroundColor: "#e6b01aa8" }}>
+                <ListItem mb="10px" p="5px" color={location.pathname === item.route ? "#ffca39" : "#FFFFFF"} _hover={{borderRadius:'8px', backgroundColor: "#e6b01aa8" }}>
                   <ListIcon as={item.icon} />
                   {item.label}
                 </ListItem>
