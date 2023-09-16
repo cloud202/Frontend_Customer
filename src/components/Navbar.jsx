@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <Flex  className='header' color='whiteAlpha.800' as="nav" p="10px" alignItems="center" gap="8px" h="55px" position="sticky" top="0" zIndex={3}>
         <Box ml={{base: '20px',lg: '10px'}} h={{base: "35px",lg: "45px"}} w={{base: "100px",lg: '120px'}} p={0}>
-        <Link to='/admin'>
+        <Link to='/'>
           <Image m={0} objectFit='cover' src={modx}/>
           </Link>
         </Box>
