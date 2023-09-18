@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Navbar } from '../../components/Navbar'
+import { Navbar } from '../components/Navbar'
 import { Box, Button, Flex, Grid, GridItem, Progress, Text } from '@chakra-ui/react'
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '../components/Sidebar'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import DueDiligence from '../../components/DueDiligence'
-import SelectTemplate from '../../components/SelectTemplate'
+import DueDiligence from '../components/DueDiligence'
+import SelectTemplate from '../components/SelectTemplate'
 
 const NewProject = () => {
   const [currPage,setCurrPage] = useState(1);
@@ -27,9 +27,6 @@ const NewProject = () => {
       </GridItem>
 
       <GridItem colSpan={{base: '6', sm: '6', md: '6',lg: '5' }} m="25px" mt='15px'>
-      <Text mb='15px' textAlign='center' p='5px' bg='#389785' color='white' borderRadius='5px' fontSize={{ base: '16px', sm: '18px',md: '25px', lg: '25px' }}>
-        Begin Your Project Journey & Let's Start With Quick Due Diligence
-      </Text>
         {/* <Progress value={100/5 * currPage} size='md' colorScheme='green' mb='10px'/> */}
 
         {currPage===1 && <DueDiligence/>}
