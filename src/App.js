@@ -4,8 +4,8 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import CustomerDashboard from './pages/user/CustomerDashboard';
-import NewProject from './pages/user/NewProject';
+import CustomerDashboard from './pages/CustomerDashboard';
+import NewProject from './pages/NewProject';
 
 function App() {
   return (
